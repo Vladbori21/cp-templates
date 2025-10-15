@@ -15,8 +15,10 @@
 sum(l, r) = pref[r+1] - pref[l]
 subarray[i,...,j] is multiple of k: pref[i] mod k = pref[j] mod k
 
-
--Leetcode 560:
+## Примеры реализации
+###Leetcode 560:
+**Идея:** ищем количество подмассивов с суммой `k`, используя префиксы и HashMap.
+**Примеры:**
   -Example 1:
     -Input: nums = [1,1,1], k = 2 <- pref[0,1,2,3]
     -Output: 2
@@ -26,7 +28,9 @@ subarray[i,...,j] is multiple of k: pref[i] mod k = pref[j] mod k
 
 
 
--Leetcode 974: <- тут нужны остатки, т.к. сумма делится на k, если остатки первого и посленего элемента подмассива равны, то подммасив кратен k
+###Leetcode 974:
+**Идея:** если остатки двух префиксов при делении на `k` равны, значит сумма между ними делится на `k`.
+**Примеры:**
   -Example 1:
     -Input: nums = [4,5,0,-2,-3,1], k = 5 <- pref[0,4,9,9,7,4,5] modulo[0,4,4,4,2,4,0]
     -Output: 7
@@ -38,7 +42,9 @@ subarray[i,...,j] is multiple of k: pref[i] mod k = pref[j] mod k
 
 
 
--Leetcode 523:
+###Leetcode 523:
+**Идея:** проверяем, есть ли подмассив длиной ≥ 2, сумма которого кратна `k`.
+**Примеры:**
   -Example 1:
     -Input: nums = [23,2,4,6,7], k = 6
     -Output: true
