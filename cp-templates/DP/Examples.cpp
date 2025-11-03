@@ -2,7 +2,7 @@ class Solution {
 public:
 
     
-    -------------HASH TABLE(MEMORISATION)-----------
+    //-------------HASH TABLE(MEMORISATION)-----------
     int helper(int n, unordered_map<int,int>& tab){
         if(n<=1) return 1;
         if(tab.count(n)) return tab[n];
@@ -16,7 +16,7 @@ public:
     
 
     
-   ------------ VECTOR(MEMORIZATION) MEMORY O(N)----------
+   //------------ VECTOR(MEMORIZATION) MEMORY O(N)----------
     int helper(int n,vector<int>& mem){
         if(n<=1) return 1;
         if(mem[n]!=-1) return mem[n];
@@ -30,7 +30,7 @@ public:
     
 
     
-    ----------VECTOR(MEMORIZATION) MEMORY(O(1))-------------
+    //----------VECTOR(MEMORIZATION) MEMORY(O(1))-------------
     int helper(int n,vector<int>& mem){
         if(n<=1) return 1;
         if(mem[n%3]!=-1) return mem[n%3];
@@ -44,7 +44,7 @@ public:
     
 
     
-   ---------------VECTOR(TABULATION) MEMORY(O(1))-------------------
+   //---------------VECTOR(TABULATION) MEMORY(O(1))-------------------
     int climbStairs(int n) {
         if(n<=1) return 1;
         int mem[3];
@@ -57,4 +57,18 @@ public:
         return mem[(i-1)%3];
     }
     
+    //-----------Kadanes's algorithm------------------
+    //search max sum of subarray in array
+    int maxSubArray(vector<int>& nums) {
+        if (nums.empty()) return 0;
+        int maxCur, maxSoFar;
+        maxCur = nums[0];
+        maxSoFar = nums[0];
+        for (int i = 1; i < nums.size(); i++) {
+            maxCur = max(maxCur + nums[i], nums[i]);
+            maxSoFar = max(maxCur, maxSoFar);
+        }
+        return maxSoFar;
+    }
+
 };
