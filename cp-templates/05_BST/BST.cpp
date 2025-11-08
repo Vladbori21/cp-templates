@@ -53,7 +53,7 @@ void destroy(node* root) {
 	if (!root) return;
 	destroy(root->left);
 	destroy(root->right);
-	cout << "Óäàëÿþ óçåë " << root->val << endl;
+	cout << "Ã“Ã¤Ã Ã«Ã¿Ã¾ Ã³Ã§Ã¥Ã« " << root->val << endl;
 	delete root;
 }
 //printing in levels
